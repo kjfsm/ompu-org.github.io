@@ -34,7 +34,7 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: >-
             pages deploy _build/default/
-            --project-name=ompu-org
+            --project-name=${{ vars.CLOUDFLARE_PROJECT_NAME }}
             --branch=${{ github.head_ref || github.ref_name }}
 
       - name: Comment preview URL on PR
